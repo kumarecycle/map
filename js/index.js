@@ -1,5 +1,5 @@
 // 地図表示時の中心座標
-var init_center_coords = [141.347899, 43.063968];
+var init_center_coords = [139.388394,36.147267];
 
 // Bing APIのキー
 var bing_api_key = 'AhGQykUKW2-u1PwVjLwQkSA_1rCTFESEC7bCZ0MBrnzVbVy7KBHsmLgwW_iRJg17';
@@ -15,7 +15,7 @@ var moveToList = [];
 
 // マップサーバ一覧
 var mapServerList = {
-	'mierune-normal': {
+/*	'mierune-normal': {
 		label: "MIERUNE",
 		source_type: "xyz",
 		source: new ol.source.XYZ({
@@ -27,7 +27,8 @@ var mapServerList = {
 			url: "https://tile.cdn.mierune.co.jp/styles/normal/{z}/{x}/{y}.png?key=227f1c519c9d6cfb8105c8bdaff9db801ed528ced9cd6c7a903d7261acf2d36d5eec15da09eaff0f15af19414918068860d8fa81a01b6823248426883759c38445f40deb510627169e",
 			projection: "EPSG:3857"
 		})
-	},
+	},*/
+
 	'bing-road': {
 		label: "標準(Bing)",
 		source_type: "bing",
@@ -111,8 +112,8 @@ $('#mainPage').on('pageshow', function() {
 	// 地図レイヤー定義
 	var papamamap = new Papamamap();
 	papamamap.viewCenter = init_center_coords;
-//	papamamap.generate(mapServerList['bing-road']);
-	papamamap.generate(mapServerList['mierune-normal']);
+	papamamap.generate(mapServerList['bing-road']);
+//	papamamap.generate(mapServerList['mierune-normal']);
 	map = papamamap.map;
 
 	// 保育施設の読み込みとレイヤーの追加
