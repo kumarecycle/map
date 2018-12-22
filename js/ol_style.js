@@ -190,6 +190,12 @@ var elementaryStyleFunction = baseSchoolStyle(
 	'#1BA466', 'rgba(27, 164, 102, 0.1)'
 	);
 
+//資源ごみ地区スタイル
+var recyclablewasteStyleFunction = baseSchoolStyle(
+	'#F1A3A3', 'rgb(241, 163, 163, 0.1)'
+	);
+
+
 // 距離計測用同心円の色設定
 var circleStyleFunction = function(feature, resolution) {
 	resolution = Math.floor(resolution * 1000);

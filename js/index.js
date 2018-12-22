@@ -250,6 +250,14 @@ $('#mainPage').on('pageshow', function() {
 		layer.setVisible($(this).prop('checked'));
 	});
 
+	// 資源ごみ地区チェックボックスのイベント定義
+	$('#cbRecyclableWaste').click(function() {
+		layer = map.getLayers().item(3);
+		layer.setVisible($(this).prop('checked'));
+	});
+
+	
+	
 	// 現在地に移動するボタンのイベント定義
 	$('#moveCurrentLocation').click(function(evt){
 		control = new MoveCurrentLocationControl();

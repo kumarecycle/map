@@ -73,6 +73,32 @@ Papamamap.prototype.generate = function(mapServerListItem)
                 ],
                 visible: false
             }),
+            // 資源ごみレイヤ―グループ
+            new ol.layer.Group({
+                layers:[
+                     // 資源ごみ地区ポリゴン
+                     new ol.layer.Vector({
+                         source: new ol.source.GeoJSON({
+                             projection: 'EPSG:3857',
+                             url: 'data/recyclableWaste.geojson'
+                         }),
+                         name: 'layerRecyclablewaste',
+                         style: recyclablewasteStyleFunction,
+                     }),
+                     // 小学校区位置
+                     new ol.layer.Vector({
+                         source: new ol.source.GeoJSON({
+                             projection: 'EPSG:3857',
+                             url: 'data/Elementary_loc.geojson'
+                         }),
+                         name: 'layerElementarySchoolLoc',
+                         style: elementaryStyleFunction,
+                     })
+                ],
+                visible: false
+            }),
+            
+            
             // 距離同心円描画用レイヤー
             new ol.layer.Vector({
                  source: new ol.source.Vector(),

@@ -32,7 +32,7 @@
 	background-color: #0362A0;
 }
 
-#lblKindergarten.ui-checkbox-on {
+#lblRecyclableWaste.ui-checkbox-on {
 	background-color: #FF4500;
 }
 
@@ -59,7 +59,7 @@
 	filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5));
 }
 
-/*吹き出し風表示用の定義 */
+/*蜷ｹ縺榊�ｺ縺鈴｢ｨ陦ｨ遉ｺ逕ｨ縺ｮ螳夂ｾｩ */
 /*
 .ol-popup:after, .ol-popup:before {
 	top: 100%;
