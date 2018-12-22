@@ -318,14 +318,14 @@ Papamamap.prototype.getPopupTitle = function(feature)
 {
     // タイトル部
     var title = '';
-    var type = feature.get('種別') ? feature.get('種別') : feature.get('Type');
+    var type = feature.get('スーパー名');
     title  = '[' + type + '] ';
-    var owner = feature.get('設置') ? feature.get('設置') : feature.get('Ownership');
+    var owner = feature.get('店舗名');
     if(owner !== undefined && owner !== null && owner !== "") {
         title += ' [' + owner +']';
     }
-    var name = feature.get('名称') ? feature.get('名称') : feature.get('Name');
-    title += name;
+    //var name = feature.get('名称') ? feature.get('名称') : feature.get('Name');
+    //title += name;
     url = feature.get('url');
     if(url !== null && url !='') {
         title = '<a href="' +url+ '" target="_blank">' + title + '</a>';
@@ -342,40 +342,41 @@ Papamamap.prototype.getPopupContent = function(feature)
 {
     var content = '';
     content = '<table><tbody>';
-    var open  = feature.get('開園時間') ? feature.get('開園時間') : feature.get('Open');
-    var close = feature.get('終園時間') ? feature.get('終園時間') : feature.get('Close');
+    var open  = feature.get('回収時間') ? feature.get('回収時間') : feature.get('Open');
+   // var close = feature.get('終園時間') ? feature.get('終園時間') : feature.get('Close');
     if (open != undefined && open !== null && open !== "" && close !== undefined && close !== null && close !== "") {
         content += '<tr>';
-        content += '<th>時間</th>';
+        content += '<th>回収時間</th>';
         content += '<td>';
-        content += open + '〜' + close;
+    //    content += open + '〜' + close;
+        content += open ;
         content += '</td>';
         content += '</tr>';
     }
-    var memo = feature.get('備考') ? feature.get('備考') : feature.get('Memo');
+    var memo = feature.get('リサイクルボックスの場所') ? feature.get('リサイクルボックスの場所') : feature.get('Memo');
     if (memo !== undefined && memo !== null) {
         content += '<tr>';
-        content += '<th></th>';
+        content += '<th>回収場所</th>';
         content += '<td>' + memo + '</td>';
         content += '</tr>';
     }
-    var temp    = feature.get('一時') ? feature.get('一時') : feature.get('Temp');
-    var holiday = feature.get('休日') ? feature.get('休日') : feature.get('holiday');
-    var night   = feature.get('夜間') ? feature.get('夜間') : feature.get('Night');
+    var PET    = feature.get('ペットボトル') ? feature.get('ペットボトル') : feature.get('PET');
+    var can = feature.get('缶') ? feature.get('缶') : feature.get('缶');
+    var bin   = feature.get('ビン') ? feature.get('ビン') : feature.get('bin');
     var h24     = feature.get('H24') ? feature.get('H24') : feature.get('H24');
 
-    if( temp !== null || holiday !== null || night !== null || h24 !== null) {
+    if( PET !== null || can !== null || night !== null || h24 !== null) {
         content += '<tr>';
-        content += '<th></th>';
+        content += '<th>回収品目</th>';
         content += '<td>';
-        if (temp !== undefined && temp !== null) {
-            content += '一時保育 ';
+        if (PET !== undefined && PET !== null) {
+            content += 'ペットボトル ';
         }
-        if (holiday !== undefined && holiday !== null) {
-            content += '休日保育 ';
+        if (can !== undefined && can !== null) {
+            content += '缶 ';
         }
-        if (night !== undefined && night !== null) {
-            content += '夜間保育 ';
+        if (bin !== undefined && bin !== null) {
+            content += 'ビン ';
         }
         if (h24 !== undefined && h24 !== null) {
             content += '24時間 ';
