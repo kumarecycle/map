@@ -25,19 +25,19 @@
             <div role="main" class="ui-content">
             <div id="nav">
                 <fieldset id="nav1" data-role="controlgroup" data-type="horizontal" data-mini="true">
-                    <label for="cbNinka" id="lblNinka">認可</label>
+                    <label for="cbNinka" id="lblNinka">リサイクルボックス設置店</label>
                     <input type="checkbox" name="cbNinka" id="cbNinka" checked="checked">
 
-                    <label for="cbNinkagai" id="lblNinkagai">認可外</label>
+                <!--    <label for="cbNinkagai" id="lblNinkagai">認可外</label>
                     <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">
-
-                    <label for="cbKindergarten" id="lblKindergarten">幼</label>
+-->
+                    <label for="cbKindergarten" id="lblKindergarten">資源ごみ</label>
                     <input type="checkbox" name="cbKindergarten" id="cbKindergarten" checked="checked">
 
-                    <label for="cbElementarySchool" id="lblElementarySchool">小</label>
+                    <label for="cbElementarySchool" id="lblElementarySchool">燃えるごみ</label>
                     <input type="checkbox" name="cbElementarySchool" id="cbElementarySchool">
 
-                    <label for="cbMiddleSchool" id="lblMiddleSchool">中</label>
+                    <label for="cbMiddleSchool" id="lblMiddleSchool">粗大ごみ</label>
                     <input type="checkbox" name="cbMiddleSchool" id="cbMiddleSchool">
 
                     <a id="btnFilter" href="#filterdialog" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-btn-a ui-icon-filter ui-btn-icon-right ui-icon-check">検索</a>
@@ -84,37 +84,57 @@
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
             <form>
                 <div style="padding:10px 20px;">
-                    <h3>保育施設 絞り込み</h3>
-                    <legend>認可保育園</legend>
+                    <h3>条件別 絞り込み</h3>
+                    <legend>スーパーマーケット</legend>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <label for="ninkaOpenTime" class="select">開園</label>
+                        <label for="ninkaOpenTime" class="select">開店</label>
                         <select id="ninkaOpenTime" class="filtersb">
-                            <option value="">開園</option>
-                            <option value="7">7:00</option>
+                            <option value="">開店</option>
+                            <option value="9">9:00</option>
+                            <option value="9.5">9:30</option>
                         </select>
-                        <label for="ninkaCloseTime" class="select">終園</label>
+                        <label for="ninkaCloseTime" class="select">閉店</label>
                         <select id="ninkaCloseTime" class="filtersb">
-                            <option value="">終園</option>
-                            <option value="18">18:00以降</option>
-                            <option value="19">19:00以降</option>
-                            <option value="20">20:00以降</option>
-                            <option value="22">22:00以降</option>
-                            <option value="24">00:00</option>
+                            <option value="">閉店</option>
+                            <option value="21">21:00以降</option>
+                            <option value="23">23:00以降</option>
+                            <option value="24">00:00以降</option>
+                            <option value="25">01:00</option>
                         </select>
                     </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <label for="ninkaIchijiHoiku">一時保育</label>
-                        <input type="checkbox" id="ninkaIchijiHoiku" class="filtercb">
-                        <label for="ninkaYakan">夜間</label>
-                        <input type="checkbox" id="ninkaYakan" class="filtercb">
-                        <label for="ninkaKyujitu">休日</label>
-                        <input type="checkbox" id="ninkaKyujitu" class="filtercb">
-                    </fieldset>
+                        <label for="ninkaPettobotoru">ペットボトル</label>
+                        <input type="checkbox" id="ninkaPettobotoru" class="filtercb">
+                        <label for="ninkaKan">缶</label>
+                        <input type="checkbox" id="ninkaKan" class="filtercb">
+                        <label for="ninkaBin">ビン</label>
+                        <input type="checkbox" id="ninkaBin" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaPurasutikkutore">プラスチックトレー</label>
+                        <input type="checkbox" id="ninkaPurasutikkutore" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaKamikuzu">紙くず</label>
+                         <input type="checkbox" id="ninkaKamikuzu" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaSinbunsi">新聞紙</label>
+                         <input type="checkbox" id="ninkaSinbunsi" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaDanboru">段ボール</label>
+                         <input type="checkbox" id="ninkaDanboru" class="filtercb">
+　　　　　　　　　　</fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+　　　　　　　　　　　　<label for="ninkaBinirubukuro">ビニール袋</label>
+                         <input type="checkbox" id="ninkaBinirubukuro" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaGyunyupakku">牛乳パック</label>
+                         <input type="checkbox" id="ninkaGyunyupakku" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaTamagopakku">卵パック</label>
+                         <input type="checkbox" id="ninkaTamagopakku" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaKandenti">乾電池</label>
+                         <input type="checkbox" id="ninkaKandenti" class="filtercb">
+　　　　　　　　　　　　<label for="ninkaZassi">雑誌</label>
+                         <input type="checkbox" id="ninkaZassi" class="filtercb">
+                    </fieldset>
+                  <!--  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="ninkaVacancy">空きあり（試用版。最新の空き状況ではありません）</label>
                         <input type="checkbox" id="ninkaVacancy" class="filtercb">
                     </fieldset>
-                    <legend>認可外保育園</legend>
+                   <legend>認可外保育園</legend>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="ninkagaiOpenTime" class="select">開園</label>
                         <select id="ninkagaiOpenTime" class="filtersb">
@@ -138,8 +158,8 @@
                     </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <label for="ninkagaiShomei">証明書あり</label>
-                    <input type="checkbox" id="ninkagaiShomei" class="filtercb">
-                    </fieldset>
+                    <input type="checkbox" id="ninkagaiShomei" class="filtercb"> -->
+                    </fieldset> 
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <a href="#" data-rel="back" id="filterApply" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-check">条件適用</a>
                         <a href="#" id="filterReset" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-delete">リセット</a>
