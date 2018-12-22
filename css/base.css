@@ -25,7 +25,7 @@
 }
 
 #lblNinka.ui-checkbox-on {
-	background-color: #6EE100;
+	background-color: #228B22;
 }
 
 #lblNinkagai.ui-checkbox-on {
@@ -33,15 +33,15 @@
 }
 
 #lblKindergarten.ui-checkbox-on {
-	background-color: #FF5C24;
+	background-color: #FF4500;
 }
 
 #lblMiddleSchool.ui-checkbox-on {
-	background-color: #7379AE;
+	background-color: #6A5ACD;
 }
 
 #lblElementarySchool.ui-checkbox-on {
-	background-color: #1BA466;
+	background-color: #556B2F;
 }
 
 .ol-popup {
