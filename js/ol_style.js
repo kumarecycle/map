@@ -6,7 +6,7 @@ var featureStyleList = {
 	'default': { color: 'rgba(153, 153, 153, 1)', img: 'image/018.png'},
 	'認可外': { color: '#0362A0', img: 'image/019.png'},
 	'幼稚園': { color: '#FF5C24', img: 'image/029.png'},
-	'スーパーマーケット': { color: '#008040', img: 'image/risris4040white.png'}
+	'スーパーマーケット': { color: '#228b22', img: 'image/risris4040white.png'}
 };
 
 /**
