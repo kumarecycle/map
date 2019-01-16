@@ -387,11 +387,19 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '</tr>';
     }
     var PET    = feature.get('ペットボトル') ? feature.get('ペットボトル') : feature.get('PET');
-    var can = feature.get('缶') ? feature.get('缶') : feature.get('缶');
+    var can = feature.get('缶') ? feature.get('缶') : feature.get('can');
     var bin   = feature.get('ビン') ? feature.get('ビン') : feature.get('bin');
-    var h24     = feature.get('H24') ? feature.get('H24') : feature.get('H24');
+    var pura     = feature.get('プラスチックトレー') ? feature.get('プラスチックトレー') : feature.get('pura');
+    var kami   = feature.get('紙くず') ? feature.get('紙くず') : feature.get('kami');
+    var shinbun = feature.get('新聞紙') ? feature.get('新聞紙') : feature.get('shinbun');
+    var ban   = feature.get('段ボール') ? feature.get('段ボール') : feature.get('ban');
+    var bini    = feature.get('ビニール袋') ? feature.get('ビニール袋') : feature.get('bini');
+    var milk    = feature.get('牛乳パック') ? feature.get('牛乳パック') : feature.get('milk');
+    var egg = feature.get('卵パック') ? feature.get('卵パック') : feature.get('egg');
+    var denchi  = feature.get('乾電池') ? feature.get('乾電池') : feature.get('denchi');
+    var book     = feature.get('雑誌') ? feature.get('雑誌') : feature.get('book');
 
-    if( PET !== null || can !== null || night !== null || h24 !== null) {
+    if( PET !== null || can !== null || bin !== null || pura !== null  kami!== null || shinbun !== null || ban !== null || bini!== null || milk!== null || egg !== null || denchi !== null || book !== null) {
         content += '<tr>';
         content += '<th>回収品目</th>';
         content += '<td>';
@@ -404,8 +412,32 @@ Papamamap.prototype.getPopupContent = function(feature)
         if (bin !== undefined && bin !== null) {
             content += 'ビン ';
         }
-        if (h24 !== undefined && h24 !== null) {
-            content += '24時間 ';
+        if (pura!== undefined && pura !== null) {
+            content += 'プラスチックトレー ';
+        }
+         if (kami !== undefined && kami !== null) {
+            content += '紙くず ';
+        }
+        if (shinbun !== undefined && shinbun !== null) {
+            content += '新聞紙 ';
+        }
+        if (ban !== undefined && ban !== null) {
+            content += '段ボール ';
+        }
+        if (bini !== undefined && bini !== null) {
+            content += 'ビニール袋 ';
+        }
+          if (milk !== undefined && milk !== null) {
+            content += '牛乳パック ';
+        }
+        if (egg !== undefined && egg !== null) {
+            content += '卵パック ';
+        }
+        if (denchi !== undefined && denchi !== null) {
+            content += '乾電池 ';
+        }
+        if (book !== undefined && book !== null) {
+            content += '雑誌 ';
         }
         content += '</td>';
         content += '</tr>';
