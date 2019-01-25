@@ -406,37 +406,37 @@ Papamamap.prototype.getPopupContent = function(feature)
         if (PET !== undefined && PET !== null) {
             content += 'ペットボトル ';
         }
-        if (can !== undefined && can !== null) {
+        else if (can !== undefined && can !== null) {
             content += '缶 ';
         }
-        if (bin !== undefined && bin !== null) {
+        else if (bin !== undefined && bin !== null) {
             content += 'ビン ';
         }
-        if (pura!== undefined && pura !== null) {
+        else if (pura !== undefined && pura !== null) {
             content += 'プラスチックトレー ';
         }
-         if (kami !== undefined && kami !== null) {
+        else if (kami !== undefined && kami !== null) {
             content += '紙くず ';
         }
-        if (shinbun !== undefined && shinbun !== null) {
+        else if (shinbun !== undefined && shinbun !== null) {
             content += '新聞紙 ';
         }
-        if (ban !== undefined && ban !== null) {
+        else if (ban !== undefined && ban !== null) {
             content += '段ボール ';
         }
-        if (bini !== undefined && bini !== null) {
+        else if (bini !== undefined && bini !== null) {
             content += 'ビニール袋 ';
         }
-          if (milk !== undefined && milk !== null) {
+        else if (milk !== undefined && milk !== null) {
             content += '牛乳パック ';
         }
-        if (egg !== undefined && egg !== null) {
+        else if (egg !== undefined && egg !== null) {
             content += '卵パック ';
         }
-        if (denchi !== undefined && denchi !== null) {
+        else if (denchi !== undefined && denchi !== null) {
             content += '乾電池 ';
         }
-        if (book !== undefined && book !== null) {
+        else if (book !== undefined && book !== null) {
             content += '雑誌 ';
         }
         content += '</td>';
