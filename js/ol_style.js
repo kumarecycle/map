@@ -185,16 +185,76 @@ var middleSchoolStyleFunction = baseSchoolStyle(
 	'#7379AE', 'rgba(115, 121, 174, 0.1)'
 	);
 
+//中学校区スタイル 月
+var middleSchoolStyleFunction_mon = baseSchoolStyle(
+	'#00bfff', 'rgb(0,191,255,0.1)'
+	);
+
+//中学校区スタイル 火
+var middleSchoolStyleFunction_tue = baseSchoolStyle(
+	'#e6e6fa', 'rgb(230,230,250,0.1)'
+	);
+
+//中学校区スタイル 水
+var middleSchoolStyleFunction_wed = baseSchoolStyle(
+	'#ffff00', 'rgb(255,255,0, 0.1)'
+	);
+
+//中学校区スタイル 木
+var middleSchoolStyleFunction_thu = baseSchoolStyle(
+    '#008000','rgb(0,128,0,0.1)'
+    );
+
+//中学校区スタイル 金
+var middleSchoolStyleFunction_fri = baseSchoolStyle(
+	'#ff00ff', 'rgb(255, 0, 255, 0.1)'
+	);
+
 // 小学校区スタイル
 var elementaryStyleFunction = baseSchoolStyle(
 	'#1BA466', 'rgba(27, 164, 102, 0.1)'
 	);
+
+//小学校区スタイル 月木
+var elementaryStyleFunction_mon_thu = baseSchoolStyle(
+	'#ffd700', 'rgb(225,215,0,0.1)'
+	);
+
+//小学校区スタイル　火金
+var elementaryStyleFunction_tue_fri = baseSchoolStyle(
+	'#afeeee', 'rgb(175,238,238,0.1)'
+	);
+
 
 //資源ごみ地区スタイル
 var recyclablewasteStyleFunction = baseSchoolStyle(
 	'#F1A3A3', 'rgb(241, 163, 163, 0.1)'
 	);
 
+//資源ごみ地区スタイル月曜日
+var recyclablewasteStyleFunction_mon = baseSchoolStyle(
+	'#00bfff', 'rgb(0,191,255,0.1)'
+	);
+
+//資源ごみ地区スタイル火曜日
+var recyclablewasteStyleFunction_tue = baseSchoolStyle(
+	'#e6e6fa', 'rgb(230,230,250,0.1)'
+	);
+
+//資源ごみ地区スタイル水曜日
+var recyclablewasteStyleFunction_wed = baseSchoolStyle(
+	'#ffff00', 'rgb(255,255,0, 0.1)'
+	);
+
+//資源ごみ地区スタイル木曜日
+var recyclablewasteStyleFunction_thu = baseSchoolStyle(
+	'#008000','rgb(0,128,0,0.1)'
+	);
+
+//資源ごみ地区スタイル金曜日
+var recyclablewasteStyleFunction_fri = baseSchoolStyle(
+	'#ff00ff', 'rgb(255, 0, 255, 0.1)'
+	);
 
 // 距離計測用同心円の色設定
 var circleStyleFunction = function(feature, resolution) {

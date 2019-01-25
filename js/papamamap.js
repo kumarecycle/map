@@ -32,21 +32,49 @@ Papamamap.prototype.generate = function(mapServerListItem)
                     new ol.layer.Vector({
                         source: new ol.source.GeoJSON({
                             projection: 'EPSG:3857',
-                            url: 'data/MiddleSchool.geojson'
+                            url: 'data/MiddleSchool_monday.geojson'
                         }),
-                        name: 'layerMiddleSchool',
-                        style: middleSchoolStyleFunction,
+                        name: 'layerMiddleSchoo_mon',
+                        style: middleSchoolStyleFunction_mon,
                     }),
                     // 中学校区位置
                     new ol.layer.Vector({
                         source: new ol.source.GeoJSON({
                             projection: 'EPSG:3857',
-                            url: 'data/MiddleSchool_loc.geojson'
+                            url: 'data/MiddleSchool_tuesday.geojson'
                         }),
-                        name: 'layerMiddleSchoolLoc',
-                        style: middleSchoolStyleFunction,
+                        name: 'layerMiddleSchoolLoc_tue',
+                        style: middleSchoolStyleFunction_tue,
                     }),
-                ],
+                    // 中学校区位置
+                    new ol.layer.Vector({
+                        source: new ol.source.GeoJSON({
+                            projection: 'EPSG:3857',
+                            url: 'data/MiddleSchool_wednesday.geojson'
+                        }),
+                        name: 'layerMiddleSchoolLoc_wed',
+                        style: middleSchoolStyleFunction_wed,
+                    }),
+                    // 中学校区位置
+                    new ol.layer.Vector({
+                        source: new ol.source.GeoJSON({
+                            projection: 'EPSG:3857',
+                            url: 'data/MiddleSchool_thursday.geojson'
+                        }),
+                        name: 'layerMiddleSchoolLoc_thu',
+                        style: middleSchoolStyleFunction_thu,
+                    }),
+                    // 中学校区位置
+                    new ol.layer.Vector({
+                        source: new ol.source.GeoJSON({
+                            projection: 'EPSG:3857',
+                            url: 'data/MiddleSchool_friday.geojson'
+                        }),
+                        name: 'layerMiddleSchoolLoc_fri',
+                        style: middleSchoolStyleFunction_fri,
+                    })
+                    
+            ],
                 visible: false
             }),
             // 小学校区レイヤーグループ
@@ -56,19 +84,19 @@ Papamamap.prototype.generate = function(mapServerListItem)
                      new ol.layer.Vector({
                          source: new ol.source.GeoJSON({
                              projection: 'EPSG:3857',
-                             url: 'data/Elementary.geojson'
+                             url: 'data/Elementary_monday_thursday.geojson'
                          }),
-                         name: 'layerElementarySchool',
-                         style: elementaryStyleFunction,
+                         name: 'layerElementarySchool_mon_thu',
+                         style: elementaryStyleFunction_mon_thu,
                      }),
                      // 小学校区位置
                      new ol.layer.Vector({
                          source: new ol.source.GeoJSON({
                              projection: 'EPSG:3857',
-                             url: 'data/Elementary_loc.geojson'
+                             url: 'data/Elementary_tuesday_friday.geojson'
                          }),
-                         name: 'layerElementarySchoolLoc',
-                         style: elementaryStyleFunction,
+                         name: 'layerElementarySchool_tue_fri',
+                         style: elementaryStyleFunction_tue_fri,
                      })
                 ],
                 visible: false
@@ -76,25 +104,54 @@ Papamamap.prototype.generate = function(mapServerListItem)
             // 資源ごみレイヤ―グループ
             new ol.layer.Group({
                 layers:[
-                     // 資源ごみ地区ポリゴン
+                     // 資源ごみ地区ポリゴン月
                      new ol.layer.Vector({
                          source: new ol.source.GeoJSON({
                              projection: 'EPSG:3857',
-                             url: 'data/recyclableWaste.geojson'
+                             url: 'data/recyclableWaste_monday.geojson'
                          }),
-                         name: 'layerRecyclablewaste',
-                         style: recyclablewasteStyleFunction,
+                         name: 'layerRecyclablewaste_mon',
+                         style: recyclablewasteStyleFunction_mon,
                      }),
-                     // 小学校区位置
+                     // 資源ごみ地区ポリゴン火
                      new ol.layer.Vector({
                          source: new ol.source.GeoJSON({
                              projection: 'EPSG:3857',
-                             url: 'data/Elementary_loc.geojson'
+                             url: 'data/recyclableWaste_tuesday.geojson'
                          }),
-                         name: 'layerElementarySchoolLoc',
-                         style: elementaryStyleFunction,
+                         name: 'layerRecyclablewaste_tue',
+                         style: recyclablewasteStyleFunction_tue,
+                     }),
+                     // 資源ごみ地区ポリゴン水
+                     new ol.layer.Vector({
+                         source: new ol.source.GeoJSON({
+                             projection: 'EPSG:3857',
+                             url: 'data/recyclableWaste_wednesday.geojson'
+                         }),
+                         name: 'layerRecyclablewaste_wed',
+                         style: recyclablewasteStyleFunction_wed,
+                     }),
+                 
+                     // 資源ごみ地区ポリゴン木
+                     new ol.layer.Vector({
+                         source: new ol.source.GeoJSON({
+                             projection: 'EPSG:3857',
+                             url: 'data/recyclableWaste_thursday.geojson'
+                         }),
+                         name: 'layerRecyclablewaste_thu',
+                         style: recyclablewasteStyleFunction_thu,
+                     }),
+                     // 資源ごみ地区ポリゴン金
+                     new ol.layer.Vector({
+                         source: new ol.source.GeoJSON({
+                             projection: 'EPSG:3857',
+                             url: 'data/recyclableWaste_friday.geojson'
+                         }),
+                         name: 'layerRecyclablewaste_fri',
+                         style: recyclablewasteStyleFunction_fri,
                      })
-                ],
+                    
+            ],
                 visible: false
             }),
             
@@ -352,10 +409,11 @@ Papamamap.prototype.getPopupTitle = function(feature)
     }
     //var name = feature.get('名称') ? feature.get('名称') : feature.get('Name');
     //title += name;
-    url = feature.get('url');
-    if(url !== null && url !='') {
-        title = '<a href="' +url+ '" target="_blank">' + title + '</a>';
-    }
+    //url = feature.get('url');
+    //if(url !== null && url !='') {
+    //if(url !== null) {
+    //    title = '<a href="' +url+ '" target="_blank">' + title + '</a>';
+    //}
     return title;
 };
 
@@ -374,7 +432,7 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<tr>';
         content += '<th>回収時間</th>';
         content += '<td>';
-    //    content += open + '〜' + close;
+    //    content += open + '?' + close;
         content += open ;
         content += '</td>';
         content += '</tr>';
@@ -389,54 +447,57 @@ Papamamap.prototype.getPopupContent = function(feature)
     var PET    = feature.get('ペットボトル') ? feature.get('ペットボトル') : feature.get('PET');
     var can = feature.get('缶') ? feature.get('缶') : feature.get('can');
     var bin   = feature.get('ビン') ? feature.get('ビン') : feature.get('bin');
-    var pura     = feature.get('プラスチックトレー') ? feature.get('プラスチックトレー') : feature.get('pura');
-    var kami   = feature.get('紙くず') ? feature.get('紙くず') : feature.get('kami');
-    var shinbun = feature.get('新聞紙') ? feature.get('新聞紙') : feature.get('shinbun');
-    var ban   = feature.get('段ボール') ? feature.get('段ボール') : feature.get('ban');
-    var bini    = feature.get('ビニール袋') ? feature.get('ビニール袋') : feature.get('bini');
-    var milk    = feature.get('牛乳パック') ? feature.get('牛乳パック') : feature.get('milk');
-    var egg = feature.get('卵パック') ? feature.get('卵パック') : feature.get('egg');
-    var denchi  = feature.get('乾電池') ? feature.get('乾電池') : feature.get('denchi');
-    var book     = feature.get('雑誌') ? feature.get('雑誌') : feature.get('book');
+    var tore     = feature.get('ブラスチックトレー') ? feature.get('ブラスチックトレー') : feature.get('tore');
+    var kuzu     = feature.get('紙くず') ? feature.get('紙くず') : feature.get('kuzu');
+    var sinbn     = feature.get('新聞紙') ? feature.get('新聞紙') : feature.get('sinbn');
+    var danboru     = feature.get('段ボール') ? feature.get('段ボール') : feature.get('danboru');
+    var biniru     = feature.get('ビニール袋') ? feature.get('ビニール袋') : feature.get('biniru');
+    var milk     = feature.get('牛乳パック') ? feature.get('牛乳パック') : feature.get('milk');
+    var egg     = feature.get('卵パック') ? feature.get('卵パック') : feature.get('egg');
+    var denti     = feature.get('乾電池') ? feature.get('乾電池') : feature.get('denti');
+    var zaxtusi     = feature.get('雑誌') ? feature.get('雑誌') : feature.get('zaxtusi');
 
-    if( PET !== null || can !== null || bin !== null || pura !== null  kami!== null || shinbun !== null || ban !== null || bini!== null || milk!== null || egg !== null || denchi !== null || book !== null) {
+
+
+    if( PET !== null || can !== null || tore !== null || h24 !== null) {
+    //if( PET !== null || can !== null || bin !== null || tore !== null || kuzu !== null || shibn !== null || danboru !== null || biniru !== null || milk !== null || egg !== null || denti !== null || zaxtusi !== null)
         content += '<tr>';
         content += '<th>回収品目</th>';
         content += '<td>';
         if (PET !== undefined && PET !== null) {
             content += 'ペットボトル ';
         }
-        else if (can !== undefined && can !== null) {
+        if (can !== undefined && can !== null) {
             content += '缶 ';
         }
-        else if (bin !== undefined && bin !== null) {
+        if (bin !== undefined && bin !== null) {
             content += 'ビン ';
         }
-        else if (pura !== undefined && pura !== null) {
+        if (tore !== undefined && tore !== null) {
             content += 'プラスチックトレー ';
         }
-        else if (kami !== undefined && kami !== null) {
+        if (kuzu !== undefined && kuzu !== null) {
             content += '紙くず ';
         }
-        else if (shinbun !== undefined && shinbun !== null) {
+        if (sinbn !== undefined && sinbn !== null) {
             content += '新聞紙 ';
         }
-        else if (ban !== undefined && ban !== null) {
+        if (danboru !== undefined && danboru !== null) {
             content += '段ボール ';
         }
-        else if (bini !== undefined && bini !== null) {
+        if (biniru !== undefined && biniru !== null) {
             content += 'ビニール袋 ';
         }
-        else if (milk !== undefined && milk !== null) {
+        if (milk !== undefined && milk !== null) {
             content += '牛乳パック ';
         }
-        else if (egg !== undefined && egg !== null) {
+        if (egg !== undefined && egg !== null) {
             content += '卵パック ';
         }
-        else if (denchi !== undefined && denchi !== null) {
+        if (denti !== undefined && denti !== null) {
             content += '乾電池 ';
         }
-        else if (book !== undefined && book !== null) {
+        if (zaxtusi !== undefined && zaxtusi !== null) {
             content += '雑誌 ';
         }
         content += '</td>';
@@ -475,7 +536,7 @@ Papamamap.prototype.getPopupContent = function(feature)
     if (ageS !== undefined && ageS !== null && ageE !== undefined && ageE !== null) {
         content += '<tr>';
         content += '<th>年齢</th>';
-        content += '<td>' + ageS + '〜' + ageE + '</td>';
+        content += '<td>' + ageS + '?' + ageE + '</td>';
         content += '</tr>';
     }
     var full = feature.get('定員') ? feature.get('定員') : feature.get('Full');
